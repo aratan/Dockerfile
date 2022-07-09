@@ -1,6 +1,12 @@
-#Dockerfile
+# Dockerfile
+  
 FROM ubuntu:22.04
 
-RUN apt-get install \ python3-pip -y
+USER root
+ 
+RUN apt update -y
+#WORKDIR ./ COPY ./app 
 
-WORKDIR /app COPY src/ . RUN pip instalar matraz CMD ["/bin/sh"]
+RUN pip instalar flask -y
+
+CMD ["/bin/bash"]
